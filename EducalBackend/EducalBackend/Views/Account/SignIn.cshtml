@@ -1,0 +1,35 @@
+﻿@model LoginVM
+
+
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+
+<section id="login mt-5" style="margin-top:120px;">
+    <div class="container mt-5">
+        <h1 class="text-center">Sign in</h1>
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="register-form" style="width:50%; margin:0 auto; background-color:coral; padding:30px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; border-radius:30px;">
+            <form method="post" asp-action="SignIn">
+                <div class="form-group">
+                    <label>Email Or Username</label>
+                    <input asp-for="EmailOrUsername" type="text" autocomplete="off" class="form-control">
+                    <span class="text-danger" asp-validation-for="EmailOrUsername"></span>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input asp-for="Password" class="form-control">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div class="register-btn d-flex justify-content-center">
+                    <button type="submit" class="btn btn-outline-dark mt-3">Sign in</button>
+                </div>
+                <a asp-action="SignUp" style="color:white">Go to Sign Up</a>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
